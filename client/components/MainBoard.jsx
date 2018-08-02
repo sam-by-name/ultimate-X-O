@@ -12,6 +12,9 @@ class MainBoard extends Component {
   }
 
   handleClick (e) {
+    this.setState = () => {
+        
+    }
     if (this.props.player) {
       return (
         e.target.style.backgroundColor = 'red'
