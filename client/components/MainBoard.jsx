@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import MiniBoard from './MiniBoard'
-import gameArr from '../../lib/gameArr'
+import {gameArr} from '../../lib/gameArr'
 
 class MainBoard extends Component {
   constructor (props) {
@@ -12,7 +12,7 @@ class MainBoard extends Component {
   }
 
   handleClick (e) {
-    
+
     var cellInfo = e.target.attributes.cellinfo.value
     cellInfo = cellInfo.split(",")
     if (this.props.player) {
@@ -22,14 +22,17 @@ class MainBoard extends Component {
       cellInfo.push('blue')
       e.target.style.backgroundColor = 'blue'
     }
-    this.setState = () => {
-        gamearr[cellInfo[3]][cellInfo[4]] = {
-          isAlive: cellInfo[0],
-          isPlayable: cellInfo[1],
-          takenBy: cellInfo[5],
-          lastTaken: cellInfo[2]
-        }
+    enterCell = {
+      isAlive: cellInfo[0],
+      isPlayable: cellInfo[1],
+      takenBy: cellInfo[5],
+      lastTaken: cellInfo[2]
     }
+
+    this.setState(
+      gameArr[cellInfo[2]][cellInfo[3]] = enterCell
+    )
+    var i = 10
   }
 
   render () {
