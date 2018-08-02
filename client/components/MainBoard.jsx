@@ -12,6 +12,8 @@ class MainBoard extends Component {
   }
 
   handleClick (e) {
+    var cellInfo = e.target.attributes.cellinfo.value
+    cellInfo = cellInfo.split(",")
     this.setState = () => {
         
     }
