@@ -12,7 +12,6 @@ class MainBoard extends Component {
   }
 
   handleClick (e) {
-
     var cellInfo = e.target.attributes.cellinfo.value
     cellInfo = cellInfo.split(",")
     if (this.props.player) {
@@ -22,17 +21,19 @@ class MainBoard extends Component {
       cellInfo.push('blue')
       e.target.style.backgroundColor = 'blue'
     }
-    enterCell = {
+    var enterCell = {
       isAlive: cellInfo[0],
       isPlayable: cellInfo[1],
       takenBy: cellInfo[5],
       lastTaken: cellInfo[2]
     }
-
-    this.setState(
-      gameArr[cellInfo[2]][cellInfo[3]] = enterCell
-    )
-    var i = 10
+    var bigGrid = Number(cellInfo[3])
+    var littleGrid = Number(cellInfo[4])
+    var gameArr = this.state.gameArr
+    gameArr[bigGrid][littleGrid] = enterCell
+    this.setState({
+      gameArr
+    })
   }
 
   render () {
