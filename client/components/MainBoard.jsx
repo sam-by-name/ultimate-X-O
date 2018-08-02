@@ -12,19 +12,23 @@ class MainBoard extends Component {
   }
 
   handleClick (e) {
+    
     var cellInfo = e.target.attributes.cellinfo.value
     cellInfo = cellInfo.split(",")
-    this.setState = () => {
-        
-    }
     if (this.props.player) {
-      return (
-        e.target.style.backgroundColor = 'red'
-      )
+      cellInfo.push('red')
+      e.target.style.backgroundColor = 'red'
     } else {
-      return (
-        e.target.style.backgroundColor = 'blue'
-      )
+      cellInfo.push('blue')
+      e.target.style.backgroundColor = 'blue'
+    }
+    this.setState = () => {
+        gamearr[cellInfo[3]][cellInfo[4]] = {
+          isAlive: cellInfo[0],
+          isPlayable: cellInfo[1],
+          takenBy: cellInfo[5],
+          lastTaken: cellInfo[2]
+        }
     }
   }
 

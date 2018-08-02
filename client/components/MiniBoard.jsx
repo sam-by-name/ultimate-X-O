@@ -4,7 +4,7 @@ const MiniBoard = (props) => {
   return (
     <div className='miniBoard'>
       <div className='topRow'>
-        <div onClick={props.handleClick} cellinfo = {[false,false,true]}value={0} className='cell'></div>
+        <div onClick={props.handleClick} cellinfo = {[false,false,true,props.value,0]}value={0} className='cell'></div>
         <div onClick={props.handleClick} cellinfo = {[false,false,true]}value={1} className='tM cell'></div>
         <div onClick={props.handleClick} cellinfo = {[false,false,true]}value={2} className='cell'></div>
       </div>
