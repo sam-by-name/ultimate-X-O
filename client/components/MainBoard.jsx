@@ -12,7 +12,7 @@ class MainBoard extends Component {
   }
 
   handleClick (e) {
-    var cellInfo = e.target.attributes.cellinfo.value
+    let cellInfo = e.target.attributes.cellinfo.value
     cellInfo = cellInfo.split(",")
     if (this.props.player) {
       cellInfo.push('red')
@@ -21,15 +21,15 @@ class MainBoard extends Component {
       cellInfo.push('blue')
       e.target.style.backgroundColor = 'blue'
     }
-    var enterCell = {
+    let enterCell = {
       isAlive: cellInfo[0],
       isPlayable: cellInfo[1],
       takenBy: cellInfo[5],
       lastTaken: cellInfo[2]
     }
-    var bigGrid = Number(cellInfo[3])
-    var littleGrid = Number(cellInfo[4])
-    var gameArr = this.state.gameArr
+    let bigGrid = Number(cellInfo[3])
+    let littleGrid = Number(cellInfo[4])
+    let gameArr = this.state.gameArr
     gameArr[bigGrid][littleGrid] = enterCell
     this.setState({
       gameArr
