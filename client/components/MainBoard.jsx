@@ -122,8 +122,10 @@ class MainBoard extends Component {
       for (let j = 0; j < 9; j++) {
         if (i !== Number(cell)) {
           gameArr[i][j].isPlayable = boo1
+          document.getElementsByClassName('miniBoard')[i].style.backgroundColor = 'grey'
         } else {
           gameArr[i][j].isPlayable = boo2
+          document.getElementsByClassName('miniBoard')[i].style.backgroundColor = 'white'
         }
       }
     }
