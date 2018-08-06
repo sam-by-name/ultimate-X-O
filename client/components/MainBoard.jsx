@@ -126,7 +126,6 @@ class MainBoard extends Component {
         } else {
           gameArr[i][j].isPlayable = boo2
           document.getElementsByClassName('miniBoard')[i].style.backgroundColor = 'white'
-
         }
       }
     }
